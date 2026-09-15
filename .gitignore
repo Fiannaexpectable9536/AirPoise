@@ -1,0 +1,32 @@
+.build/
+dist/
+.DS_Store
+**/.DS_Store
+.swiftpm/
+*.xcodeproj
+xcuserdata/
+DerivedData/
+Resources/AppIcon.iconset/
+Resources/AppIcon.icns
+
+# Marketing site is not part of this repository.
+site/
+
+# Secrets, keys, env, signing leftovers
+.env
+.env.*
+*.pem
+*.p12
+*.key
+*.cer
+*.mobileprovision
+*.xcuserstate
+secrets/
+credentials.json
+auth.json
+
+# Local noise
+*.log
+.idea/
+.vscode/
+*.swp
