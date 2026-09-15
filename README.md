@@ -15,6 +15,8 @@
   <a href="#privacy"><img src="https://img.shields.io/badge/network-none-ffd60a?style=flat-square" alt="No network"></a>
 </p>
 
+**[Download AirPoise 1.0.0](https://github.com/jaskirat1616/AirPoise/releases/latest)** — open the DMG and drag the app onto Applications.
+
 A macOS menu-bar comic of an app. AirPoise reads the motion sensors Apple already put in your AirPods — the same fused IMU Spatial Audio uses — and turns head pose into two things:
 
 1. **Posture coaching.** Nudge when your chin creeps forward or your head lists to one side.
@@ -76,13 +78,25 @@ Bind any of them to a recorded keystroke, a Shortcuts action, a URL, an app, `zs
   - Beats Fit Pro
 - Original AirPods / AirPods 2 have **no IMU**. The menu bar will say “No head-tracking buds”.
 
-## Build
+## Download
+
+Grab **AirPoise-1.0.0.dmg** from [Releases](https://github.com/jaskirat1616/AirPoise/releases). Open the disk image and drag **AirPoise** onto **Applications**.
+
+First launch may ask macOS to confirm an unidentified developer until the app is notarized with a Developer ID. Right-click the app → **Open**.
+
+## Build from source
 
 Always launch the **`.app`**. A bare `swift build` binary has no `NSMotionUsageDescription`, and macOS will kill it the moment it touches motion.
 
 ```bash
 ./scripts/build-app.sh
 open dist/AirPoise.app
+```
+
+Ship a disk image:
+
+```bash
+./scripts/make-dmg.sh
 ```
 
 Tests and a release binary:

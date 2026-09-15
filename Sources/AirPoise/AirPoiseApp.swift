@@ -98,14 +98,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             self?.onboardWindow?.close()
             NSApp.setActivationPolicy(.accessory)
         }.environmentObject(AppModel.shared))
+        host.view.appearance = NSAppearance(named: .aqua)
         let win = NSWindow(contentViewController: host)
         win.title = "AirPoise"
         win.identifier = NSUserInterfaceItemIdentifier("onboarding")
-        win.styleMask = [.titled, .closable, .fullSizeContentView]
+        win.styleMask = [.titled, .closable, .resizable, .fullSizeContentView]
         win.titlebarAppearsTransparent = true
         win.titleVisibility = .hidden
         win.backgroundColor = Comic.nsPaper
-        win.setContentSize(NSSize(width: 760, height: 600))
+        win.appearance = NSAppearance(named: .aqua)
+        win.setContentSize(NSSize(width: 980, height: 760))
+        win.minSize = NSSize(width: 880, height: 680)
         win.center()
         win.isReleasedWhenClosed = false
         win.makeKeyAndOrderFront(nil)

@@ -21,7 +21,10 @@ struct OnboardingView: View {
             navBar
         }
         .background(Comic.paper)
-        .frame(width: 760, height: 600)
+        .environment(\.colorScheme, .light)
+        .preferredColorScheme(.light)
+        .frame(minWidth: 960, minHeight: 740)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
             Comic.registerFonts()
         }
@@ -217,6 +220,7 @@ struct OnboardingView: View {
                     .foregroundStyle(ok ? Comic.ink : Comic.pop)
                 Text(title)
                     .font(.comicInk(20))
+                    .foregroundStyle(Comic.ink)
                 Text(body)
                     .font(.system(size: 13, design: .serif))
                     .foregroundStyle(Comic.mute)
@@ -252,6 +256,7 @@ struct OnboardingView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Calibrate upright.")
                         .font(.comicInk(28))
+                        .foregroundStyle(Comic.ink)
                     Text("Sit the way you actually want to sit. Wear the buds. Press the stamp. AirPoise stores that gravity vector. Posture survives taking them out. Gestures are flicks that come home.")
                         .font(.system(size: 15, design: .serif))
                         .foregroundStyle(Comic.mute)
@@ -297,6 +302,7 @@ struct OnboardingView: View {
                     .frame(maxWidth: 520)
                 Text("Sit better today.")
                     .font(.comicInk(18))
+                    .foregroundStyle(Comic.ink)
                     .padding(.top, 8)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
