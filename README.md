@@ -1,183 +1,184 @@
 <p align="center">
-  <img src="Resources/Onboarding/comic-upright.png" width="280" alt="AirPoise comic portrait wearing AirPods">
+  <img src="Resources/Onboarding/comic-upright.png" width="220" alt="AirPoise mascot wearing AirPods">
 </p>
 
 <h1 align="center">AirPoise</h1>
 
 <p align="center">
-  <strong>Wear your AirPods. Sit better.</strong><br>
-  That’s it. That’s the app.
+  A tiny Mac menu-bar app. Wear AirPods, sit better, and run shortcuts with your head.
 </p>
 
 <p align="center">
-  <a href="#build"><img src="https://img.shields.io/badge/macOS-14%2B-black?style=flat-square" alt="macOS 14+"></a>
+  <a href="https://github.com/jaskirat1616/AirPoise/releases/latest"><img src="https://img.shields.io/badge/download-DMG-black?style=flat-square" alt="Download"></a>
+  <a href="#what-you-need"><img src="https://img.shields.io/badge/macOS-14%2B-black?style=flat-square" alt="macOS 14+"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-e31b23?style=flat-square" alt="MIT"></a>
-  <a href="#privacy"><img src="https://img.shields.io/badge/network-none-ffd60a?style=flat-square" alt="No network"></a>
 </p>
 
 **[Download AirPoise 1.0.0](https://github.com/jaskirat1616/AirPoise/releases/latest)** — open the DMG and drag the app onto Applications.
 
-A macOS menu-bar comic of an app. AirPoise reads the motion sensors Apple already put in your AirPods — the same fused IMU Spatial Audio uses — and turns head pose into two things:
+AirPoise reads the motion sensors already inside AirPods (the same ones Spatial Audio uses). It does two jobs:
 
-1. **Posture coaching.** Nudge when your chin creeps forward or your head lists to one side.
-2. **Head-gesture shortcuts.** Nod, glance, tilt, or hold-tilt to fire keystrokes, Shortcuts, URLs, scripts, media keys, Mission Control, and more.
+1. **Posture** — reminds you when your chin drifts forward or your head tilts.
+2. **Head shortcuts** — nod, shake, glance, or tilt to play/pause, switch desktops, run a Mac shortcut, open a link, and more.
 
-No camera. No cloud. No Dock icon. It lurks with the date.
+No camera. No account. No internet. It lives in the menu bar, not the Dock.
 
-> This is **AirPoise the Mac app**. It is not the sitting cushion sold at airpoise.com.
+This is the **Mac app**. It is not the sitting cushion sold at airpoise.com.
 
 ---
 
-## Panel 1 — Sit the way you mean to
+## Quick start
 
-Calibrate once, sitting the way you actually want to sit. AirPoise stores that **gravity** vector.
+1. Install from the [DMG](https://github.com/jaskirat1616/AirPoise/releases/latest) (or build from source below).
+2. Put on **AirPods Pro / 3 / 4 / Max** or **Beats Fit Pro**, and set them as the Mac’s sound output.
+3. Allow **Motion & Fitness** when asked.
+4. Sit the way you want to sit, look at the screen, and **Calibrate upright**.
+5. Click the menu-bar icon for the live readout. Right-click for Pause / Calibrate / **Settings** / Quit.
 
-| Reading | Meaning |
+If macOS blocks the app: right-click AirPoise → **Open**.
+
+---
+
+## How to control it (shortcuts and more)
+
+Everything is in **Settings** (right-click the menu-bar icon → Settings).
+
+### Actions — pick what each head move does
+
+Open **Settings → Actions**. Tap a gesture, then choose what it should do.
+
+| You can bind a gesture to… | Examples |
 |---|---|
-| Flexion | Chin forward (text-neck). Not a hunched back with a level head — the buds cannot see your spine. |
-| Lateral | Ear toward shoulder. |
+| Keyboard shortcut | Record ⌘⇥, media keys, anything you type |
+| Apple Shortcuts app | Run a Shortcut by name |
+| Open a link or an app | URL, or pick an `.app` |
+| Media / volume / brightness | Play-pause, next, mute, brighter |
+| Mac system stuff | Mission Control, Spaces, screenshot, lock, Spotlight, sleep |
+| Notification, speak, or paste text | A ping, a spoken line, clipboard paste |
+| Shell or AppleScript | Only if you write that command yourself |
+| Nothing | Leave it unassigned |
 
-Defaults (all adjustable):
+**Out of the box**
 
-- ≤ 7° flexion → Excellent
-- ≤ 12° → Good
-- ≤ 20° held ~12s → nudge
-- beyond that held ~8s → slouch nudge
+| Head move | What it does |
+|---|---|
+| Double nod | Play / Pause |
+| Look left / look right | Switch Space (desktop) |
+| Hold left tilt | Mission Control |
+| Double shake | A small ping notification |
+| Everything else | Off until you assign it |
 
-A walk-rejection filter ignores you in the hallway. A slow rest tracker follows a sit, so a slump is not a permanent nod.
+Turn a gesture off by setting its action to **Do nothing**, or disable **Head-gesture shortcuts** under **Settings → Gestures**.
 
-## Panel 2 — Then the chin creeps
+Custom keyboard shortcuts need **Accessibility** (Settings → General → Grant). Play/pause and volume usually do not.
 
-Held too long, you get a glass overlay, an optional ping, an optional spoken cue. Not a lecture. A tap on the panel border.
+### Gestures — how sensitive the moves feel
 
-## Panel 3 — A nod is not a slouch
+**Settings → Gestures**
 
-A gesture is an **excursion that returns** (or a deliberate hold). Sixteen of them:
+- Master on/off for all head shortcuts
+- **Sensitivity** — easier or harder to trigger
+- **Cooldown** — wait between triggers so you don’t double-fire
+- **Hold duration** — how long to hold a tilt
+- A list of all 16 moves with a short how-to for each: nod, double nod, shake, look left/right/up/down, tilt, hold-tilt, lean, roll
 
-| Gesture | Motion | Default |
-|---|---|---|
-| Nod / double nod | Chin down, return. Two within 0.85s = double. | Double nod → Play / Pause |
-| Shake / double shake | A “no” in yaw. | Double shake → ping |
-| Look left / right / up / down | Glance and return. | Look L/R → Switch Space |
-| Tilt left / right | Ear to shoulder, return. | — |
-| Hold tilt L / R | Hold that ear tilt ~0.55s. | Hold left → Mission Control |
-| Lean forward / back | Gravity flexion flick. | — |
-| Roll left / right | Combined roll + yaw energy. | — |
+A shortcut fires when you move and **come back**. Sitting still in a slouch is not a nod.
 
-Bind any of them to a recorded keystroke, a Shortcuts action, a URL, an app, `zsh`, AppleScript, speak/paste, media, volume, brightness, Mission Control, Spaces, screenshot, lock, Launchpad, Spotlight, or sleep.
+### Posture — how strict the coach is
+
+**Settings → Posture**
+
+- Turn the coach on or off
+- How many degrees of forward lean count as good vs “nudge me”
+- How long you must stay there before a reminder
+- Overlay card, notification, sound, or spoken cue
+- Ignore you while walking
+
+Calibrate again any time from the menu bar if your chair or desk changes.
+
+### General
+
+Launch at login, menu-bar style, Motion & Accessibility status, and invert an axis if a direction feels backwards on your buds.
 
 ---
 
-## Requirements
+## What you need
 
-- **macOS 14 Sonoma or later** (`CMHeadphoneMotionManager` arrived on the Mac with Sonoma)
-- **Headphones with Spatial Audio head tracking**, worn and set as the Mac’s audio output:
-  - AirPods Pro (1 / 2 / 3)
-  - AirPods 3 or 4
-  - AirPods Max
-  - Beats Fit Pro
-- Original AirPods / AirPods 2 have **no IMU**. The menu bar will say “No head-tracking buds”.
+- **macOS 14 Sonoma** or later
+- AirPods with **head tracking**: Pro, 3, 4, Max, or Beats Fit Pro, worn and selected as Mac audio output
+- Original AirPods / AirPods 2 will not work (no motion sensor). The menu bar will say “No head-tracking buds”
+
+---
+
+## Honest limits
+
+- It sees **head pose**, not your whole spine. A level head on a rounded back still reads “good”.
+- About 25 samples a second. Fine for sitting and discrete gestures, not a VR headset.
+- Intel Macs on Sonoma may run. Apple Silicon is what we test.
+
+---
+
+## Privacy
+
+Nothing is uploaded. No analytics. Settings stay in `~/Library/Application Support/AirPoise/`. See [SECURITY.md](SECURITY.md).
+
+---
 
 ## Download
 
-Grab **AirPoise-1.0.0.dmg** from [Releases](https://github.com/jaskirat1616/AirPoise/releases). Open the disk image and drag **AirPoise** onto **Applications**.
-
-First launch may ask macOS to confirm an unidentified developer until the app is notarized with a Developer ID. Right-click the app → **Open**.
+**[AirPoise-1.0.0.dmg](https://github.com/jaskirat1616/AirPoise/releases/latest)** — drag onto Applications.
 
 ## Build from source
 
-Always launch the **`.app`**. A bare `swift build` binary has no `NSMotionUsageDescription`, and macOS will kill it the moment it touches motion.
+Always run the **`.app`**, not the raw `swift build` binary. macOS needs `NSMotionUsageDescription` in the app bundle.
 
 ```bash
 ./scripts/build-app.sh
 open dist/AirPoise.app
 ```
 
-Ship a disk image:
-
 ```bash
-./scripts/make-dmg.sh
+./scripts/make-dmg.sh          # disk image
+swift test --package-path .    # tests
 ```
 
-Tests and a release binary:
+---
 
-```bash
-swift test --package-path .
-swift build -c release --product AirPoise
-```
+## How the sensors work (for developers)
 
-On first launch the comic intro walks the story: sit → slump → nod → two permissions → calibrate → menu bar. Re-run it from **Settings → General**.
+Apple already fuses the AirPods accelerometer + gyro for Spatial Audio. AirPoise does not invent a second compass. It reads `CMDeviceMotion` (~25 Hz).
 
-1. Allow **Motion & Fitness** when asked. (System Settings → Privacy & Security → Motion & Fitness if you missed it.)
-2. Grant **Accessibility** only if you want gestures to type shortcuts or drive system actions.
-3. Sit the way you want to sit, look at the screen, **Calibrate upright**.
-
-Left-click the menu bar icon for the live HUD. Right-click Pause / Calibrate / Settings / Quit.
-
-## How the signal actually works
-
-Apple already fuses the AirPods accelerometer + gyro for Spatial Audio. AirPoise does **not** invent a second AHRS. It consumes `CMDeviceMotion` (~25 Hz).
-
-**Headphone body frame:** **x = right ear, y = nose, z = crown** — not the iPhone frame. Orientations are taken relative to your calibration pose (`ref⁻¹ · q`), then decomposed intrinsically (Z–X′–Y″):
-
-- **yaw +** — look left (rotation about the crown)
-- **pitch +** — chin up (rotation about the right ear)
-- **roll +** — right ear toward right shoulder (rotation about the nose)
-
-Gyro maps the same way (`turn = ωz`, `nod = ωx`, `ear tilt = ωy`). If an axis reads backwards on your buds, Settings → General has invert toggles.
+Headphone frame: **x = right ear, y = nose, z = crown**. Relative pose is `ref⁻¹ · q`. Gyro: turn = ωz, nod = ωx, ear tilt = ωy. Invert any axis in Settings → General if firmware feels backwards.
 
 | Field | Used for |
 |---|---|
-| `attitude` quaternion | Relative yaw / pitch / roll for gestures. Recentered on calibrate. |
-| `gravity` | Posture. Flexion and lateral tilt vs. calibrated upright. Survives taking the buds out. |
-| `rotationRate` | Flick energy, hold-still, walk rejection. |
-| `userAcceleration` | Ignore tracking while you walk. |
-| `sensorLocation` | Which bud is the motion source. |
+| `attitude` | Gestures (yaw / pitch / roll vs calibrate) |
+| `gravity` | Posture (chin-forward and side tilt). Survives taking the buds out |
+| `rotationRate` | Flick energy, hold-still, walk rejection |
+| `userAcceleration` | Ignore tracking while you walk |
+| `sensorLocation` | Which bud is the motion source |
 
-Smoothing is a **1€ filter** (Casiez et al.): low lag while you move, quiet when you hold still. A watchdog re-subscribes if the stream goes silent without a disconnect (common after idle / wake). Automatic Ear Detection produces connect/disconnect as you put the buds in or take them out.
-
-## Privacy
-
-- No network.
-- No analytics, no account, no crash reporter.
-- Settings and daily stats live in `~/Library/Application Support/AirPoise/`.
-- Accessibility is unused unless you bind keystrokes / system actions.
-- AppleScript / shell run only if you created that binding.
-
-See [SECURITY.md](SECURITY.md).
-
-## Honest limits
-
-- ~25 Hz, not a 200 Hz IMU dump. Fine for posture and discrete gestures. Not a VR headset.
-- Head pose ≠ full-spine posture. A level head on a rounded back still reads “good”.
-- Spatial Audio head tracking must be supported by the buds; firmware and in-ear detection both matter.
-- Custom shortcuts need Accessibility. Media keys generally do not.
-- Intel Macs on Sonoma may run. Apple Silicon is the page we lettered.
-
-## Layout
+Smoothing is a 1€ filter. A watchdog re-subscribes after idle/wake. Ear detection connect/disconnects as you put buds in or take them out.
 
 | Path | What |
 |---|---|
-| `Sources/AirPoiseCore` | Math, pose, gesture engine, posture coach, settings store. No AppKit. |
-| `Sources/AirPoise` | Menu bar, comic onboarding, overlays, action runner, SwiftUI settings. |
-| `Tests/AirPoiseTests` | Math / posture / gesture unit tests. |
-| `Resources/Onboarding` | Comic panels for the first-launch story. |
-| `scripts/build-app.sh` | Release `.app` + icon + signing. |
+| `Sources/AirPoiseCore` | Math, pose, gestures, posture, settings. No AppKit |
+| `Sources/AirPoise` | Menu bar, first-launch window, overlays, Settings |
+| `Tests/AirPoiseTests` | Unit tests |
+| `scripts/build-app.sh` | Build the `.app` |
 
 ## Uninstall
 
-Quit AirPoise, delete `dist/AirPoise.app` (or wherever you copied it), and optionally:
+Quit AirPoise, delete the app, and optionally:
 
 ```bash
 rm -rf ~/Library/Application\ Support/AirPoise
 ```
 
-Turn off Login Items in System Settings if you enabled launch-at-login.
-
-## Fonts
-
-Onboarding uses [Bangers](https://github.com/googlefonts/bangers) and [Archivo Black](https://github.com/Omnibus-Type/ArchivoBlack), both SIL Open Font License. Copies of the OFL sit in `Resources/Fonts/`.
+Turn off Login Items if you enabled launch-at-login.
 
 ## License
 
 [MIT](LICENSE) © 2026 Jaskirat Singh
+
+Onboarding fonts: [Bangers](https://github.com/googlefonts/bangers) and [Archivo Black](https://github.com/Omnibus-Type/ArchivoBlack) (SIL OFL), in `Resources/Fonts/`.
